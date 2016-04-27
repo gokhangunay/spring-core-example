@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="beanWorker" class="com.gokhangunay.Worker" autowire="byType">
+		<property name="name" value="Gokhan"></property>
+		<property name="surName" value="Gunay"></property>
+		
+		<!-- simdi biz burada autowire kullandigimiz icin artik benim propertylerimdeki adressi tanimlamama gerek yok
+			yiklarida bean icersinde autowire attribute ni tanimliyoruz.
+			autowire kendi icersinde de attribute leri var. no degeri default bir deger zaten
+			
+			autowire byType verdigimiz zaman tipe bakar.
+					byName verirsek property ismine bakar ki o zaman address beaninin id si property si ile ayni olmali.
+			<property name="address" ref="beanAddress"></property>		
+		 -->
+		 
+		 <!-- assadi sekilde constructor kullaniyorsan autowired icerisinde constructor kullanacan -->
+		 <!-- <constructor-arg ref="beanAddress"></constructor-arg> -->
+		
+	</bean>
+	
+	<bean id="beanAddress" class="com.gokhangunay.Address">
+		<property name="fullAddress" value="Istanbul"></property>
+	</bean>
+
+</beans>

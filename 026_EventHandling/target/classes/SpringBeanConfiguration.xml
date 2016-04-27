@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+	<bean id="beanWords" class="com.gokhangunay.Words">
+		<property name="sentence" value="Cok calisin!" ></property>
+	</bean>
+	
+	<bean id="beanContextStart" class="com.gokhangunay.ContextStart">
+	
+	</bean>
+	
+	<bean id="beanContextStop" class="com.gokhangunay.ContextStop">
+	
+	</bean>
+	
+	<bean id="beanContextRefresh" class="com.gokhangunay.ContextRefresh">
+	
+	</bean>
+	
+	<bean id="beanContextClose" class="com.gokhangunay.ContextClose">
+	
+	</bean>
+
+</beans>

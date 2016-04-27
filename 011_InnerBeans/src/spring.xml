@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+
+<!-- 	assagidaki seneryolarda bu sekilde kullanma. farkli kullanimi bir alt satirda
+	
+	<bean id="beanOrder" class="com.gokhangunay.Order">
+		<property name="total" value="100"></property>
+	</bean>
+	
+	<bean id="beanCustomer" class="com.gokhangunay.Customer">
+		<property name="order" ref="beanOrder"></property>
+	</bean> -->
+
+
+	
+	<bean id="beanCustomer" class="com.gokhangunay.Customer">
+		<property name="order">
+			<bean id="beanOrder" class="com.gokhangunay.Order"> <!-- buradaki id yi silsekte calisir. -->
+				<property name="total" value="100"></property>	<!-- bu sekilde sadece tek bir bean kullanabilir. -->
+			</bean>	
+		</property>
+	</bean>
+
+</beans>

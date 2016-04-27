@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+	<context:annotation-config/>
+	
+	<bean id="beanLesson" class="com.gokhangunay.Lesson">
+		<property name="point" value="100"/>
+		<property name="courseContent" value="Math"/>
+		<!-- <property name="student" ref="beanStudent"/> bunu kapadik cunku artik burada bu isi Autowired ' a emanet ediyoruz-->
+	</bean>
+	
+	<bean id="beanStudent" class="com.gokhangunay.Student">
+		<property name="name" value="Gokhan1"/>
+		<property name="surName" value="Gunay1"/>
+	</bean>
+	
+	<bean id="beanStudent2" class="com.gokhangunay.Student">
+		<property name="name" value="Gokhan2"/>
+		<property name="surName" value="Gunay2"/>
+	</bean>
+	
+		<bean id="beanStudent3" class="com.gokhangunay.Student">
+		<property name="name" value="Gokhan2"/>
+		<property name="surName" value="Gunay3"/>
+	</bean>
+	
+	<bean id="beanStudent4" class="com.gokhangunay.Student">
+		<property name="name" value="Gokhan4"/>
+		<property name="surName" value="Gunay4"/>
+	</bean>
+
+</beans>

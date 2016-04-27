@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="beanHello" class="com.gokhangunay.Hello">
+		<property name="message1" value="helloClassMessage1"></property>
+		<property name="message2" value="helloClassMessage2"></property>
+	</bean>
+	
+	<bean id="beanAuthor" class="com.gokhangunay.Author" parent="beanHello">
+		<property name="message1" value="authorClassMessage1"></property>
+		<!-- <property name="message2" value="authorClassMessage2"></property> bunu kapattim. cunku burada miras durumu soz konusu.
+																				hello sinifindaki message2 yi alacak. bunu saglayan parrent durumu.
+																					beanleri birbirine bagliyoruz.--> 
+		<property name="message3" value="authorClassMessage3"></property>
+	</bean>
+
+	<bean id="initHello" class="com.gokhangunay.InitHello"/>
+
+</beans>

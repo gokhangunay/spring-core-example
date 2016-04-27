@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+	<context:annotation-config/> <!-- uzerine gelip beklediginde bunu contextin kullandigi annot. gorebilirsin. -->
+	
+	<context:component-scan base-package="com.gokhangunay.math"/> <!-- java classlari icerisine @component-scan ekliorum ama bir yerde patlio anlam veremedim.
+	bu yuzden bu isi springBeanConfig.xml ile cozduk? Bunu arastiracagim. -->
+	
+	<!-- <context:component-scan base-package="componenti taramasi icin sinfin paket ismini verecegiz.!"/> -->
+	<!-- yukaridakinin yerine artik @ComponentScan kullanacagaiz. -->
+	
+
+	<!-- <bean id="beanOperation" class="com.gokhangunay.math.Operation"/> bunun yerine artik @component annot. kullaniyoruz.--> 
+
+</beans>

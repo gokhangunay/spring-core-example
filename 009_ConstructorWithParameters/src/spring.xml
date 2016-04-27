@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="triangle" class="com.gokhangunay.Triangle">
+	
+<!-- 	<constructor-arg value="ikiz kenar"/>
+	<constructor-arg value="34"/> bu sekilde birakirsak patlar! cunku ikitane constructor var icerde tek parametreliyi alir birakir.
+	ama tek parametreli olani metodu kaldirirsak patlamaz akillidir. sirayla yazmakta onemlidir. en kotu tip tanimalamlarini yaparsan durumu cozer. -->
+	
+		<constructor-arg index="0" type="java.lang.String" value="ikiz kenar"/>
+		<constructor-arg index="1" type="java.lang.Integer" value="34"/>
+		<constructor-arg index="2" type="java.lang.Double" value="40.1"/>
+		
+		<!-- triangle sinifinda 3 paremetreli constructor var. yukarida da 3 tane constractr tanimladiysak artik triangle sinifindaki diger
+		 2 parametreli 1 parametreli constructorlari gormez spring. Bu da boyle biline :) -->
+<!-- 		<property name="style" value="es kenar"/> constructor icerisinde property kullandiysak bunu tanimlamamiza gerek yok-->
+	</bean>
+
+</beans>

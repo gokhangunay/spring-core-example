@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:c="http://www.springframework.org/schema/c"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+<!-- 	<bean id="student" class="com.gokhangunay.Student">
+	
+		burada p name spacesini kullanacagiz. assagida 3 defa ard arda property yazdim. 
+		Buna gerek yok p tagi ile bu isi cozecegiz. assada tekrar ornegi var.
+	
+		<property name="name" value="Gokhan"/>
+		<property name="surName" value="Gunay"/>
+		<property name="number" value="1453"></property>
+		
+	</bean> -->
+	
+	<bean id="beanSchool" class="com.gokhangunay.School" >
+	 <property name="schoolName" value="Sakarya Universitesi"></property>
+	</bean>
+	
+<!-- 	<bean id="beanAdress" class="com.gokhangunay.Adress">
+		<constructor-arg value="Lise Sok" index="0" /> boyle hayvan gibi constructor yazmaya gerek yok. assadaki gibi yapcaz!
+		<constructor-arg value="Batı Mah" index="1"/>
+	</bean> -->
+	
+	<bean id="beanAdress" class="com.gokhangunay.Adress"
+		c:street = "Lise Sok"
+		c:district = "Batı Mah">
+	</bean>
+	
+		<bean id="beanAdress1" class="com.gokhangunay.Adress"
+		c:_0 = "Lise Sok" 
+		c:_1 = "Batı Mah">
+	</bean>
+	
+	
+	<bean id="beanStudent" class="com.gokhangunay.Student"
+		p:name = "Gokhan"
+		p:surName = "Gunay"
+		p:number = "1453"
+		p:universty-ref="beanSchool"> <!-- okul adinda bir siniftan turedigi icin referans almasi gerkeiyor. bu yuzden yukarida school sinifinin beanini yaratalim. -->
+		
+		<constructor-arg ref="beanAdress" name="adress"></constructor-arg>
+		
+	</bean>
+		
+</beans>

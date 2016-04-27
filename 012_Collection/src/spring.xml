@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+
+	<bean id="beanStudent" class="com.gokhangunay.Student">
+	
+		<!-- isim icin -->
+		<property name="studentList">
+			<list>
+				<value>Gokhan</value>
+				<value>Guven</value>
+				<value>Hakan</value>
+			</list>
+		</property>
+		
+		<!-- soyad icin -->
+		<property name="studentMap">
+			<map>
+				<entry key="1" value="Gunay"></entry>
+				<entry key="2" value="Bicer"></entry>
+				<entry key="3" value="Imren"></entry>
+			</map>
+		</property>
+		
+		<!-- title icin -->
+		<property name="studentSet">
+			<set>
+				<value>Hoca</value>
+				<value>Sinif Baskani</value>
+				<value>Sinif Baskan Yard.</value>
+			</set>
+		</property>
+		
+		<!-- yas icin -->
+		<property name="studentProperties">
+			<props>
+				<prop key="1">27</prop>
+				<prop key="2">33</prop>
+				<prop key="3">30</prop>
+			</props>
+		</property>
+	</bean>
+
+</beans>

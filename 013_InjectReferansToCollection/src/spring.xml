@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="beanStudent" class="com.gokhangunay.Student">
+		<property name="name" value="Gokhan"></property>
+		<property name="surName" value="Gunay"></property>
+		<property name="age" value="27"></property>
+		<property name="department" value="Bilgisayar Muhendisligi"></property>
+	</bean>
+	
+	<bean id="beanCollections" class="com.gokhangunay.Collections">
+		<property name="list">
+			<list>
+				<value>list1</value>
+				<value>list2</value>
+				<ref bean="beanStudent"/>
+				
+				<!-- 
+					Ic ice bean de oldugu gibi kullanabilirsin! Bu sekilde de deger alabilirsin yada bir ust satirdaki gibi 
+					value ile de alabilirsin. Senaryoya gore degisiklik gosterir.
+				
+					<bean id="beanStudent" class="com.gokhangunay.Student">
+						<property name="name" value="Gokhan"></property>
+						<property name="surName" value="Gunay"></property>
+						<property name="age" value="27"></property>
+						<property name="department" value="Bilgisayar Muhendisligi"></property>
+					</bean>  
+				-->	
+				
+			</list>
+	
+		</property>
+		
+		<property name="map">
+			<map>
+			
+				<!-- 				
+				<entry key="1">
+				
+				bu sekilde de kullanabiliyoruz. bu da farkli bir senaryo.
+					<bean id="beanStudent" class="com.gokhangunay.Student">
+						<property name="name" value="Gokhan"></property>
+						<property name="surName" value="Gunay"></property>
+						<property name="age" value="27"></property>
+						<property name="department" value="Bilgisayar Muhendisligi"></property>
+					</bean>						
+					
+				</entry>
+				
+				<entry key="2" value="comment"></entry>
+				 -->
+			
+				<entry key="Student" value-ref="beanStudent">
+					
+				</entry>
+			</map>
+		</property>
+		
+		<property name="properties">
+			<props>
+				<prop key="1">properties1</prop>
+				<prop key="2">properties2</prop>
+			</props>
+		</property>
+		
+		<property name="set">
+			<set>
+				<value>set1</value>
+				<value>set2</value>
+				<ref bean="beanStudent"/>
+				
+				<!-- 
+					Ic ice bean de oldugu gibi kullanabilirsin! Bu sekilde de deger alabilirsin yada bir ust satirdaki gibi 
+					value ile de alabilirsin. Senaryoya gore degisiklik gosterir.
+				
+					<bean id="beanStudent" class="com.gokhangunay.Student">
+						<property name="name" value="Gokhan"></property>
+						<property name="surName" value="Gunay"></property>
+						<property name="age" value="27"></property>
+						<property name="department" value="Bilgisayar Muhendisligi"></property>
+					</bean>  
+				-->	
+				
+			</set>
+		</property>
+		
+		<!-- NOT:!!!! util:set & util:list gibi de kullanabiliriz. bu sekilde kullandigimizda list yapisinin classlarinida belirtebilioruz.
+			classlara ornek java.Util falan gibi..
+			
+			setin ozelligi by definiton dir. sirali tutmaz normalde.seti sirali tutmasi icin ozel iplementasyon gerekir.
+			setle listeyi ayiran ozellik budur zaten. set bir kumedir. set icin class="com.util.Tree" mesala..
+		 -->
+		
+		
+	</bean>
+</beans>

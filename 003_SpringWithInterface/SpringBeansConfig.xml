@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+<!-- 	<bean id="fuelDiesel" class="com.gokhangunay.Diesel"></bean>
+ -->	
+	<!-- burda onceden sadece gasoline yada disel vardi. ama hepsini kullanmak icin bu sekilde tek tek ekledim. -->
+	
+	<bean id="fuelGasoline" class="com.gokhangunay.Gasoline"></bean>
+	
+	<bean id="car" class="com.gokhangunay.Car">
+	
+			<constructor-arg ref="fuelGasoline"></constructor-arg>
+		
+		<!-- <constructor-arg ref="#{fuel}"></constructor-arg> -->
+		
+	</bean>
+		
+	<bean id="fuelDiesel" class="com.gokhangunay.Diesel"></bean>
+	
+	<bean id="truck" class="com.gokhangunay.Truck">
+		
+		<constructor-arg ref="fuelDiesel"></constructor-arg>
+		
+	</bean>
+	
+	
+<!-- 	yukaridaki bircok eklemeyi yaptiktan sonra simdi spel uyguluyoruz. hata kalkiyor -->
+	
+
+</beans>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<!-- burada scope icerigi singleton. Tek nesne uzerinden. Cikti gayet guzel -->
+	<!-- scope icerigini prototype yaptigimiz zaman her seferinde yeni nesne yaratacak. Cikti boka sarcak.
+			her seferinde init ve destroyu ayri ayri, diger apprun sinifindaki ciktilari ayri ayri basacak -->
+
+	<bean id="beanHello" class="com.gokhangunay.Hello" scope="singleton" 
+			init-method="initHello"			
+			destroy-method="destroyHello"> 		<!-- init method baslarken, destroy method sonlandirilirken-->
+				<property name="message" value="HelloXML"/>
+	</bean>
+	
+	<bean id="beanInitHello" class="com.gokhangunay.InitHello"> <!-- bu classi refereans olarak hicbiryerde kullanmadim. 
+																	fakat app context bunu yakalayip BeanPostProcessor olarak replace ediyor.
+																	spring type tan burada yakaliyor. postProcessor den 2 tane class oldugunda 
+																		patlamaz. calisir ve her ikisinide gorur. -->
+		
+	</bean>
+	
+
+</beans>
