@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+	
+	<bean id="beanBook" class="com.gokhangunay.Book">
+		<property name="bookName" value="SpringCore Book"/>
+		<property name="bookISBN" value="123456789"/>
+	</bean>
+	
+	<bean id="beanAuthor" class="com.gokhangunay.Author">
+		
+		<property name="authorName" value="gokhan"/>
+		<property name="authorSurname" value="gunay"/>
+		
+		
+<!-- 		<property name="authorBookName" ref="beanBook"/>  aslında buna gerek yok gibi duruyor, kitap üzerinden ismini alabiliriz ama sabırsızlanma bekle. 
+																bunlara value atamaktansa spel ile değer ataması yapalım.  bunlar programlamada hamallıktan başka birşey degil :(
+			<property name="book" ref="beanBook"/> -->
+	
+		
+		<property name="authorBookName" value="#{beanBook.bookName}"/> <!-- yukarıdakinin yerine bunu koyduk  -->
+		<property name="book" value="#{beanBook}"/> <!-- degeri nereden alacağımızı belirtiyoruz işte -->
+		
+	</bean>
+	
+	
+</beans>
