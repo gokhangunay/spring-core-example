@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.2.xsd">
+	
+	<bean id="beanBook" class="com.gokhangunay.Book">
+		<property name="bookName" value="SpringCore Book"/>
+		<property name="bookISBN" value="123456789"/>
+	</bean>
+	
+	<bean id="beanAuthor" class="com.gokhangunay.Author">
+		
+		<property name="authorName" value="gokhan"/>
+		<property name="authorSurname" value="gunay"/>		
+		<property name="authorBookName" value="#{beanBook.bookName}"/>
+		<property name="book" value="#{beanBook}"/>
+		<property name="information" value="#{beanBook.getShowBookInformation(beanAuthor.authorName, beanAuthor.authorSurname, beanBook.bookName, beanBook.bookISBN)}"/>
+		
+	</bean>
+	
+	
+</beans>
