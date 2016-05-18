@@ -47,6 +47,7 @@ public class AopUtility implements MethodBeforeAdvice, AfterReturningAdvice, Thr
 		}
 	}
 
+	
 	public void afterThrowing(IllegalArgumentException e) throws Throwable{
 		System.err.println(" After exception"); // err.println olduğu için ekrana kırımızı basacak. Yukarıda ad soyadın lenght kontrolü var. 
 	}											// SpringBeanConfig.xml içerisinde ad yada soyadın karakterini 2 den az yaparsanız bu durum gerçekleşecek.
