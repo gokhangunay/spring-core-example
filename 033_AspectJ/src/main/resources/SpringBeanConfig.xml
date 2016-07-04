@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+<!-- *************************************************************************************************************************************** -->
+
+	<aop:aspectj-autoproxy/>
+	
+	<context:annotation-config/>
+	
+	<context:component-scan base-package="com.gokhangunay.aop, com.gokhangunay.model"/>	
+		
+	<bean id="beanAopUtility" class="com.gokhangunay.aop.AopUtility"/>	
+		
+	<bean id="beanPersonel" class="com.gokhangunay.model.Personel">
+		<property name="name" value="Gokhan"/>
+		<property name="surName" value="Gunay"/>
+		<property name="experience" value="3 Year"/>
+	</bean>
+
+<!-- *************************************************************************************************************************************** -->
+	
+<!--  	<aop:config>
+			<aop:aspect id="aspects" ref="beanAopUtility">
+				<aop:pointcut expression="execution(* com.gokhangunay.model.personel.hello(..))" id="pointCutBefore"/>
+				<aop:before method="beforeForNameAndSurname" pointcut-ref="pointCutBefore"/>
+			</aop:aspect>
+		</aop:config> -->
+		
+<!-- 		ustteki xml tarafinda yapilanlarin java tarafindaki karsiligi. -->
+		
+<!-- 		@Before("execution(* com.gokhangunay.model.personel.personelNameAndSurnameControl(..))")
+		public void beforeForNameAndSurname(JoinPoint joinPoint) throws Throwable{
+			System.out.println("****** Before General ******" + joinPoint.getSignature().getName()); // metodun ismini gormek icin
+		} -->
+	
+<!-- *************************************************************************************************************************************** -->	
+
+
+	<!-- Alttaki proxyi devre disi biraktik. Bunu 032_AOP orneginde kullandik. Onun yerine artik @AspectJ annot devreye girecek  -->
+
+<!-- 	<bean id="beanPersonelProxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<property name="target" ref="beanPersonel"/> Ben kimin için çalışacağım? Referans ile bağlama işlemi gerçekleşti
+		<property name="interceptorNames" > Kesicinin ismi. Kimin için çalışacağım? Araya çalışacak bir kod atıyoruz
+			<list>
+				<value>beanAopUtility</value>
+			</list>
+		</property> 
+	</bean> -->
+	
+</beans>
