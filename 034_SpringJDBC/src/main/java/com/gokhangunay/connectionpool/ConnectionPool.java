@@ -11,7 +11,6 @@ import javax.sql.DataSource;
 
 public class ConnectionPool {
 
-	private List<Object[]> resultSet = new ArrayList<Object[]>();
 	private DataSource dataSource;
 	private Connection connection;
 	private PreparedStatement preparedStatement;
