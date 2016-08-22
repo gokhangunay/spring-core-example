@@ -1,0 +1,5 @@
+Once mysql kurun, internette bunun icin cok bilgi var. DB username ve password dikkat, bunlari bir yerde tutmayi unutmayin.
+DBScript icerisindeki sql'i calistirin.
+SpringBeanConfig.xml dosyasindaki dataSource icin database bilgilerini kendi database inize gore guncellemeyi unutmayin.
+AppRun icerisinde 1 ve 2 numarali commentleri ayri ayri calistirin. Biri insert yapar digeride id ye gore kayit ceker. 
+Kolay gele.
